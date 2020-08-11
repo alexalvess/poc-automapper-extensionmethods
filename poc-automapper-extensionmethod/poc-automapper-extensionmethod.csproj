@@ -7,8 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Case02\Entities\" />
-    <Folder Include="Case02\Models\" />
     <Folder Include="Case03\Entities\" />
     <Folder Include="Case03\Models\" />
   </ItemGroup>

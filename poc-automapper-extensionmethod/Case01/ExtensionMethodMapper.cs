@@ -13,6 +13,16 @@ namespace poc_automapper_extensionmethod.Case01
             new User(userModel.Id, userModel.BirthDate, userModel.Name, userModel.Score);
 
         public static List<User> Mapper(this List<UserModel> usersModel) =>
-            new List<User>(usersModel.Select(s => new User(s.Id, s.BirthDate, s.Name, s.Score)));
+            new List<User>(usersModel.Select(s => s.Mapper()));
+
+        public static List<User> MapperWithoutLambda(this List<UserModel> users)
+        {
+            var list = new List<User>(users.Count);
+
+            for (int i = 0; i < users.Count; i++)
+                list.Add(users[i].Mapper());
+
+            return list;
+        }
     }
 }
