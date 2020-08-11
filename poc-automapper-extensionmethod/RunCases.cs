@@ -8,10 +8,7 @@ namespace poc_automapper_extensionmethod
 {
     public static class RunCases
     {
-        public static void WithMapper<TSource, TDestiny>(Mapper mapper, TSource source, int quantity) =>
-            Execute(() => mapper.Map<TDestiny>(source), "AutoMapper", quantity);
-
-        public  static T Execute<T>(Func<T> func, string useCase, int quantity)
+        public  static void Execute<T>(Func<T> func, string useCase, int quantity)
         {
             Console.WriteLine($"{useCase} with {quantity} object(s)");
 
@@ -21,7 +18,7 @@ namespace poc_automapper_extensionmethod
             var before0 = GC.CollectionCount(0);
             sw.Start();
 
-            var result = func();
+            func();
 
             sw.Stop();
 
@@ -35,8 +32,6 @@ namespace poc_automapper_extensionmethod
             Console.WriteLine($"GC Gen #0: {GC.CollectionCount(0) - before0}\n");
 
             LogRecord.WriteLog(sw.ElapsedMilliseconds, gen2, gen1, gen0, $"{useCase} with {quantity} object(s)");
-
-            return result;
         }
     }
 }

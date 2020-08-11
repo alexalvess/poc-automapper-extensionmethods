@@ -17,22 +17,22 @@ namespace poc_automapper_extensionmethod.Case02
         {
             Console.WriteLine("CASE 02");
 
-            RunCases.WithMapper<UserModel, User>(InitializeAutomapper(), GenerateMock().First(), 1); // 26ms | 0 gen2 | 0 gen1 | 0 gen0
-            RunCases.WithMapper<List<UserModel>, List<User>>(InitializeAutomapper(), GenerateMock(1_000), 1_000); // 12ms | 1 gen2 | 1 gen1 | 1 gen0
-            RunCases.WithMapper<List<UserModel>, List<User>>(InitializeAutomapper(), GenerateMock(10_000), 10_000); // 15ms | 0 gen2 | 0 gen1 | 1 gen0
-            RunCases.WithMapper<List<UserModel>, List<User>>(InitializeAutomapper(), GenerateMock(100_000), 100_000); // 202ms | 6 gen2 | 6 gen1 | 15 gen0
-            RunCases.WithMapper<List<UserModel>, List<User>>(InitializeAutomapper(), GenerateMock(1_000_000), 1_000_000); // 2193ms | 2 gen2 | 45 gen1 | 122 gen0
+            //RunCases.WithMapper<UserModel, User>(InitializeAutomapper(), GenerateMock().First(), 1); // 26ms | 0 gen2 | 0 gen1 | 0 gen0
+            //RunCases.WithMapper<List<UserModel>, List<User>>(InitializeAutomapper(), GenerateMock(1_000), 1_000); // 12ms | 1 gen2 | 1 gen1 | 1 gen0
+            //RunCases.WithMapper<List<UserModel>, List<User>>(InitializeAutomapper(), GenerateMock(10_000), 10_000); // 15ms | 0 gen2 | 0 gen1 | 1 gen0
+            //RunCases.WithMapper<List<UserModel>, List<User>>(InitializeAutomapper(), GenerateMock(100_000), 100_000); // 202ms | 6 gen2 | 6 gen1 | 15 gen0
+            //RunCases.WithMapper<List<UserModel>, List<User>>(InitializeAutomapper(), GenerateMock(1_000_000), 1_000_000); // 2193ms | 2 gen2 | 45 gen1 | 122 gen0
 
-            WithoutMapper(GenerateMock(1));
-            WithoutMapper(GenerateMock(1_000));
-            WithoutMapper(GenerateMock(10_000));
-            WithoutMapper(GenerateMock(100_000));
-            WithoutMapper(GenerateMock(1_000_000));
+            //WithoutMapper(GenerateMock(1));
+            //WithoutMapper(GenerateMock(1_000));
+            //WithoutMapper(GenerateMock(10_000));
+            //WithoutMapper(GenerateMock(100_000));
+            //WithoutMapper(GenerateMock(1_000_000));
 
-            WithoutMapperAndWithoutLambda(GenerateMock(1_000));
-            WithoutMapperAndWithoutLambda(GenerateMock(10_000));
-            WithoutMapperAndWithoutLambda(GenerateMock(100_000));
-            WithoutMapperAndWithoutLambda(GenerateMock(1_000_000));
+            //WithoutMapperAndWithoutLambda(GenerateMock(1_000));
+            //WithoutMapperAndWithoutLambda(GenerateMock(10_000));
+            //WithoutMapperAndWithoutLambda(GenerateMock(100_000));
+            //WithoutMapperAndWithoutLambda(GenerateMock(1_000_000));
         }
 
         private static void WithoutMapper(List<UserModel> source)
