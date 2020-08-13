@@ -1,14 +1,13 @@
-﻿using AutoMapper;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 
-namespace poc_automapper_extensionmethod
+namespace poc_automapper_extensionmethod.Shared
 {
     public static class RunCases
     {
-        public  static void Execute<T>(Func<T> func, string useCase, int quantity)
+        public static void Execute<T>(Func<T> func, string useCase, int quantity)
         {
             Console.WriteLine($"{useCase} with {quantity} object(s)");
 

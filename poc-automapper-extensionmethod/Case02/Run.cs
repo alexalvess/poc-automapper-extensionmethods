@@ -3,6 +3,7 @@ using Bogus;
 using poc_automapper_extensionmethod.Case02.Entities;
 using poc_automapper_extensionmethod.Case02.Enum;
 using poc_automapper_extensionmethod.Case02.Models;
+using poc_automapper_extensionmethod.Shared;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace poc_automapper_extensionmethod
+namespace poc_automapper_extensionmethod.Shared
 {
     public static class GenerateList
     {

@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace poc_automapper_extensionmethod
+namespace poc_automapper_extensionmethod.Shared
 {
     public static class LogRecord
     {
