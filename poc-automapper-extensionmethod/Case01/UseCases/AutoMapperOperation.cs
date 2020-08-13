@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using poc_automapper_extensionmethod.Case01.Entities;
 using poc_automapper_extensionmethod.Case01.Models;
+using poc_automapper_extensionmethod.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +13,12 @@ namespace poc_automapper_extensionmethod.Case01.UseCases
     {
         public static void Start()
         {
-            WithMapper<UserModel, User>(InitializeAutomapper(), Mock.GenerateMock().First(), 1);
-            WithMapper<List<UserModel>, List<User>>(InitializeAutomapper(), Mock.GenerateMock(1_000), 1_000);
-            WithMapper<List<UserModel>, List<User>>(InitializeAutomapper(), Mock.GenerateMock(10_000), 10_000);
-            WithMapper<List<UserModel>, List<User>>(InitializeAutomapper(), Mock.GenerateMock(100_000), 100_000);
-            WithMapper<List<UserModel>, List<User>>(InitializeAutomapper(), Mock.GenerateMock(1_000_000), 1_000_000);
+            Execution.Execute((i) => {
+                if (i == 1)
+                    WithMapper<UserModel, User>(InitializeAutomapper(), Mock.GenerateMock().First(), i);
+                else
+                    WithMapper<List<UserModel>, List<User>>(InitializeAutomapper(), Mock.GenerateMock(i), i);
+            });
         }
 
         public static void WithMapper<TSource, TDestiny>(Mapper mapper, TSource source, int quantity) =>
