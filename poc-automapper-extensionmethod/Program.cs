@@ -12,7 +12,7 @@ namespace poc_automapper_extensionmethod
                 File.Delete(file);
 
             Case01.Run.Start();
-            //Case02.Run.Start();
+            Case02.Run.Start();
         }
     }
 }

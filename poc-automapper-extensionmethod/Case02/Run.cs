@@ -3,6 +3,7 @@ using Bogus;
 using poc_automapper_extensionmethod.Case02.Entities;
 using poc_automapper_extensionmethod.Case02.Enum;
 using poc_automapper_extensionmethod.Case02.Models;
+using poc_automapper_extensionmethod.Case02.UseCases;
 using poc_automapper_extensionmethod.Shared;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,10 @@ namespace poc_automapper_extensionmethod.Case02
         public static void Start()
         {
             Console.WriteLine("CASE 02");
+
+            AutoMapperOperation.Start();
+            //ExtensionMethod.Start();
+            CreateMethod.Start();
 
             //RunCases.WithMapper<UserModel, User>(InitializeAutomapper(), GenerateMock().First(), 1); // 26ms | 0 gen2 | 0 gen1 | 0 gen0
             //RunCases.WithMapper<List<UserModel>, List<User>>(InitializeAutomapper(), GenerateMock(1_000), 1_000); // 12ms | 1 gen2 | 1 gen1 | 1 gen0
