@@ -17,7 +17,7 @@ namespace poc_automapper_extensionmethod.Shared
             var before0 = GC.CollectionCount(0);
             sw.Start();
 
-            func();
+            var resul = func();
 
             sw.Stop();
 
