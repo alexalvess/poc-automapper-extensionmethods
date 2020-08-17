@@ -12,6 +12,8 @@ namespace poc_automapper_extensionmethod.Case03
             Console.WriteLine("CASE 03");
 
             AutoMapperOperation.Start();
+            ExtensionMethod.Start();
+            CreateMethod.Start();
         }
     }
 }
