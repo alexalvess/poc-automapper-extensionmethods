@@ -29,8 +29,10 @@ namespace poc_automapper_extensionmethod.Shared
             Console.WriteLine($"GC Gen #2: {GC.CollectionCount(2) - before2}");
             Console.WriteLine($"GC Gen #1: {GC.CollectionCount(1) - before1}");
             Console.WriteLine($"GC Gen #0: {GC.CollectionCount(0) - before0}\n");
+            
+            LogRecord.WriteLog(sw.ElapsedMilliseconds, gen2, gen1, gen0, useCase, quantity);
 
-            LogRecord.WriteLog(sw.ElapsedMilliseconds, gen2, gen1, gen0, $"{useCase} with {quantity} object(s)");
+            GC.Collect();
         }
     }
 }

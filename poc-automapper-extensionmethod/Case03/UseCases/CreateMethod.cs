@@ -22,33 +22,33 @@ namespace poc_automapper_extensionmethod.Case03.UseCases
         private static void WithLambda(List<UserModel> source)
         {
             if (source.Count == 1)
-                RunCases.Execute(() => User.Create(source.First()), "With Create Method", source.Count);
+                RunCases.Execute(() => User.Create(source.First()), "Create Method - Lambda", source.Count);
             else
-                RunCases.Execute(() => User.CreateWithLambda(source), "With Lambda", source.Count);
+                RunCases.Execute(() => User.CreateWithLambda(source), "Create Method - Lambda", source.Count);
         }
 
         private static void WithFor(List<UserModel> source)
         {
             if (source.Count > 1)
-                RunCases.Execute(() => User.CreateWithFor(source), "With For", source.Count);
+                RunCases.Execute(() => User.CreateWithFor(source), "Create Method - For", source.Count);
         }
 
         private static void WithForeach(List<UserModel> source)
         {
             if (source.Count > 1)
-                RunCases.Execute(() => User.CreateWithForeach(source), "With Foreach", source.Count);
+                RunCases.Execute(() => User.CreateWithForeach(source), "Create Method - Foreach", source.Count);
         }
 
         private static void WithParallelFor(List<UserModel> source)
         {
             if (source.Count > 1)
-                RunCases.Execute(() => User.CreateWithParallelFor(source), "With Parallel For", source.Count);
+                RunCases.Execute(() => User.CreateWithParallelFor(source), "Create Method - Parallel For", source.Count);
         }
 
         private static void WithParallelForeach(List<UserModel> source)
         {
             if (source.Count > 1)
-                RunCases.Execute(() => User.CreateWithParallelForeach(source), "With Parallel Foreach", source.Count);
+                RunCases.Execute(() => User.CreateWithParallelForeach(source), "Create Method - Parallel Foreach", source.Count);
         }
     }
 }

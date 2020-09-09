@@ -40,33 +40,33 @@ namespace poc_automapper_extensionmethod.Case01.UseCases
         private static void WithLambda(List<UserModel> source)
         {
             if (source.Count == 1)
-                RunCases.Execute(() => source.First().Mapper(), "With Lambda", source.Count);
+                RunCases.Execute(() => source.First().Mapper(), "ExtensionMethod - Lambda", source.Count);
             else
-                RunCases.Execute(() => source.Mapper(), "With Lambda", source.Count);
+                RunCases.Execute(() => source.Mapper(), "ExtensionMethod - Lambda", source.Count);
         }
 
         private static void WithFor(List<UserModel> source)
         {
             if (source.Count > 1)
-                RunCases.Execute(() => source.MapperWithFor(), "With For", source.Count);
+                RunCases.Execute(() => source.MapperWithFor(), "ExtensionMethod - For", source.Count);
         }
 
         private static void WithForeach(List<UserModel> source)
         {
             if (source.Count > 1)
-                RunCases.Execute(() => source.MapperWithForeach(), "With Foreach", source.Count);
+                RunCases.Execute(() => source.MapperWithForeach(), "ExtensionMethod - Foreach", source.Count);
         }
 
         private static void WithParallelFor(List<UserModel> source)
         {
             if (source.Count > 1)
-                RunCases.Execute(() => source.MapperWithParallelFor(), "With Parallel For", source.Count);
+                RunCases.Execute(() => source.MapperWithParallelFor(), "ExtensionMethod - Parallel For", source.Count);
         }
 
         private static void WithParallelForeach(List<UserModel> source)
         {
             if (source.Count > 1)
-                RunCases.Execute(() => source.MapperWithParallelForeach(), "With Parallel Foreach", source.Count);
+                RunCases.Execute(() => source.MapperWithParallelForeach(), "ExtensionMethod - Parallel Foreach", source.Count);
         }
     }
 }

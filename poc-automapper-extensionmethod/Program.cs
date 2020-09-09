@@ -11,9 +11,9 @@ namespace poc_automapper_extensionmethod
             if (File.Exists(file))
                 File.Delete(file);
 
-            //Case01.Run.Start();
+            Case01.Run.Start();
             //Case02.Run.Start();
-            Case03.Run.Start();
+            //Case03.Run.Start();
         }
     }
 }
